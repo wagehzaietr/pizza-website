@@ -46,7 +46,13 @@ export const HeroHeader = () => {
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
-              <LogoIcon />
+              <div className="flex items-center justify-center gap-2 text-xl font-semibold">
+                <LogoIcon className="w-6 h-6 text-primary" />
+                <span>
+                  <span className="text-primary">P</span>izza
+                </span>
+              </div>
+
               <Link
                 href="/"
                 aria-label="home"

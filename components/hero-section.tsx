@@ -5,6 +5,8 @@ import Image from "next/image";
 import { HeroHeader } from "./header";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import { CircleArrowRight } from "lucide-react";
+import SliderItems from "./SliderItems";
 
 export default function HeroSection() {
   return (
@@ -26,8 +28,8 @@ export default function HeroSection() {
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                   <Button asChild size="lg" className="px-5 text-base">
-                    <Link href="#link">
-                      <span className="text-nowrap">Start Building</span>
+                    <Link href="/menu">
+                      <span className="text-nowrap">ORDER NOW</span>
                     </Link>
                   </Button>
                   <Button
@@ -38,17 +40,21 @@ export default function HeroSection() {
                     className="px-5 text-base"
                   >
                     <Link href="#link">
-                      <span className="text-nowrap">Request a demo</span>
+                      <span className="text-nowrap flex justify-center items-center gap-2">
+                        Learn more <CircleArrowRight className="size-5 mt-1" />
+                      </span>
                     </Link>
                   </Button>
                 </div>
               </div>
               <Image
-                className="-z-10 rounded-4xl order-first ml-auto h-96 w-full object-cover sm:h-96 lg:absolute lg:inset-0 lg:-right-20 lg:-top-25 lg:order-last lg:h-[540px] lg:w-2/3 lg:object-contain dark:mix-blend-lighten dark:invert-0"
+                className="-z-10 rounded-4xl object-contain order-first ml-auto h-96 w-full sm:h-96 lg:absolute lg:inset-0 lg:-right-20 lg:-top-25 lg:order-last lg:h-[540px] lg:w-2/3 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                 src="/hero-img.png"
                 alt="Abstract Object"
                 height="4000"
                 width="3000"
+                priority
+                loading="eager"
               />
             </div>
           </div>
@@ -57,38 +63,13 @@ export default function HeroSection() {
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
-                <p className="text-end text-sm">Powering the best teams</p>
+                <p className="text-end text-sm">Our most popular</p>
               </div>
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
-                <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-5 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                      alt="Nvidia Logo"
-                      height="20"
-                      width="auto"
-                    />
-                  </div>
-
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-4 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/column.svg"
-                      alt="Column Logo"
-                      height="16"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-4 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/github.svg"
-                      alt="GitHub Logo"
-                      height="16"
-                      width="auto"
-                    />
-                  </div>
+                <InfiniteSlider speedOnHover={10} speed={30} gap={120}>
+                  <SliderItems image='/row-img2.png' />
+                  <SliderItems image='/row-img3.png' />
+                  <SliderItems image='/row-img4.png' />
                 </InfiniteSlider>
 
                 <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>

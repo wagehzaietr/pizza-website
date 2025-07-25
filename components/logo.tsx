@@ -4,7 +4,7 @@ import { cn } from '../lib/utils'
 
 export const LogoIcon = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
     return (
-          <Image src='/header-logo.png' alt='logo image' width={35} height={35} className=' rounded-full'/>
+          <Image priority loading='eager' src='/header-logo.png' alt='logo image' width={35} height={35} className=' rounded-full object-contain'/>
     )
 }
 
