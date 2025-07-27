@@ -13,6 +13,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
+import { useCart } from "@/app/context/CartContext";
 const menuItems = [
   { name: "Menu", href: "/menu" },
   { name: "About", href: "/about" },
@@ -20,9 +22,11 @@ const menuItems = [
 ];
 
 export const HeroHeader = () => {
+  const router = useRouter();
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
   const { setTheme } = useTheme();
+  const { getItemCount } = useCart();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +43,7 @@ export const HeroHeader = () => {
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            "mx-auto mt-2 max-w-6xl px-3 transition-all duration-300 lg:px-4",
             isScrolled &&
               "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
           )}
@@ -47,7 +51,9 @@ export const HeroHeader = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
               <div className="flex items-center justify-center gap-2 text-xl font-semibold">
-                <LogoIcon className="w-6 h-6 text-primary" />
+                <Link href="/">
+                  <LogoIcon />
+                </Link>
                 <span>
                   <span className="text-primary">P</span>izza
                 </span>
@@ -74,6 +80,7 @@ export const HeroHeader = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
+                      prefetch={true}
                       className="text-muted-foreground hover:text-accent-foreground block duration-150"
                     >
                       <span>{item.name}</span>
@@ -119,6 +126,8 @@ export const HeroHeader = () => {
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
+
+   
                 <Button
                   asChild
                   variant="outline"
@@ -138,14 +147,35 @@ export const HeroHeader = () => {
                     <span>Sign Up</span>
                   </Link>
                 </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
+                             <Button
+                  variant="outline"
+                  className="flex items-center gap-2"
+                  onClick={() => router.push("/cart")}
                 >
-                  <Link href="#">
-                    <span>Get Started</span>
-                  </Link>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-shopping-cart"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                  </svg>
+                  <span className="relative">
+                    Cart
+                    {getItemCount() > 0 && (
+                      <span className="absolute -top-2 -right-6 bg-orange-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                        {getItemCount()}
+                      </span>
+                    )}
+                  </span>
                 </Button>
               </div>
             </div>

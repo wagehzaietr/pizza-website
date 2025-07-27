@@ -1,10 +1,11 @@
-// BestSellers.tsx
+'use client'
 
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Button } from "@/components/ui/button"; // Replace with your own <button> if needed
+import { bestSellers,extras } from "@/app/data/data";
+import { useCart } from "@/app/context/CartContext";
 
-// Types
 type PizzaSize = "Small" | "Medium" | "Large";
 
 interface BestSellerItem {
@@ -20,62 +21,20 @@ interface SizeOption {
   multiplier: number;
 }
 
-// Data
-const bestSellers: BestSellerItem[] = [
-  {
-    id: 1,
-    title: "Pepperoni Pizza",
-    description: "Classic pepperoni with mozzarella and tomato sauce.",
-    basePrice: 10,
-    image: "/hero-img2.jpeg",
-  },
-  {
-    id: 2,
-    title: "Margherita Pizza",
-    description: "Fresh basil, mozzarella, and rich tomato sauce.",
-    basePrice: 9,
-    image: "/row-img4.png",
-  },
-  {
-    id: 3,
-    title: "BBQ Chicken Pizza",
-    description: "Grilled chicken, BBQ sauce, onions, and mozzarella.",
-    basePrice: 11,
-    image: "/row-img3.png",
-  },
-  {
-    id: 4,
-    title: "Veggie Delight",
-    description: "Mushrooms, bell peppers, onions, olives, and more.",
-    basePrice: 8,
-    image: "/row-img2.png",
-  },
-];
-
 const sizes: SizeOption[] = [
   { label: "Small", multiplier: 1 },
   { label: "Medium", multiplier: 1.5 },
   { label: "Large", multiplier: 2 },
 ];
 
-const extras: string[] = [
-  "Extra Cheese",
-  "Olives",
-  "Mushrooms",
-  "Bacon",
-  "Pineapple",
-  "Onions",
-  "Spinach",
-  "Tomatoes",
-  "Chili Flakes",
-  "Garlic Sauce",
-];
+
 
 export default function BestSellers() {
   const [selected, setSelected] = useState<BestSellerItem | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [size, setSize] = useState<PizzaSize>("Medium");
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
+  const { addItem, getItemCount } = useCart();
 
   const handleAddToCart = (item: BestSellerItem) => {
     setSelected(item);
@@ -115,7 +74,7 @@ export default function BestSellers() {
               {item.description}
             </p>
             <p className="text-lg font-bold mb-3">${item.basePrice.toFixed(2)}</p>
-            <Button onClick={() => handleAddToCart(item)}>Add to Cart</Button>
+            <Button onClick={() => handleAddToCart(item)}>Order</Button>
           </div>
         ))}
       </div>
@@ -174,7 +133,7 @@ export default function BestSellers() {
               <p className="text-lg font-semibold">
                 Total: ${getTotalPrice().toFixed(2)}
               </p>
-              <Button onClick={() => setIsOpen(false)}>Confirm</Button>
+              <Button  onClick={() => setIsOpen(false)}>Confirm</Button>
             </div>
           </Dialog.Panel>
         </div>
