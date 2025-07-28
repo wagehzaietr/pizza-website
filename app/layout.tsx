@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { HeroHeader } from "@/components/header";
 import { CartProvider } from "./context/CartContext";
 import { Toaster } from "react-hot-toast";
+import  {Footer}  from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
           >
           <HeroHeader/>
             {children}
+            <Footer/>
           <Toaster/>
         </ThemeProvider>
           </CartProvider>

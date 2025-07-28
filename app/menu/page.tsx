@@ -66,9 +66,9 @@ export default function MenuPage() {
       
       {/* Pizza Cards Grid */}
       {filteredPizzas.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 dark:bg-background">
           {filteredPizzas.map(pizza => (
-            <Card key={pizza.id} className="  hover:shadow-lg transition-shadow">
+            <Card key={pizza.id} className="  hover:shadow-lg transition-shadow dark:bg-card/50">
               <CardHeader>
                 <CardTitle className="text-xl">{pizza.name}</CardTitle>
                 <CardDescription className="">{pizza.category.charAt(0).toUpperCase() + pizza.category.slice(1)}</CardDescription>

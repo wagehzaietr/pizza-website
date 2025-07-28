@@ -56,13 +56,13 @@ export default function BestSellers() {
   };
 
   return (
-    <div className="p-6 relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
-      <h2 className="text-2xl text-center md:text-start md:text-3xl font-bold mb-4">Best Sellers</h2>
+    <div className="p-6 relative mx-auto flex max-w-6xl flex-col px-6 lg:block ">
+      <h2 className="text-4xl text-center md:text-start md:text-3xl font-bold mb-4">Best Sellers</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {bestSellers.map((item) => (
           <div
             key={item.id}
-            className="rounded-2xl shadow-md p-4 flex flex-col items-center bg-white border-3 dark:bg-background"
+            className="rounded-2xl shadow-md p-4 flex flex-col items-center bg-white border-1 dark:border-white/10 dark:bg-card/50"
           >
             <img
               src={item.image}
@@ -82,16 +82,16 @@ export default function BestSellers() {
       {/* Modal */}
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-        <div className="fixed inset-0 flex items-center justify-center p-4">
-          <Dialog.Panel className="w-full max-w-md rounded-2xl bg-white dark:bg-background p-6 shadow-xl">
+        <div className="fixed inset-0 flex items-center justify-center p-4 ">
+          <Dialog.Panel className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl dark:bg-card">
             <Dialog.Title className="text-xl font-bold mb-4">
               Customize Your {selected?.title}
             </Dialog.Title>
 
             {/* Size Selector */}
-            <div className="mb-4">
+            <div className="mb-4 ">
               <p className="font-semibold mb-1">Select Size:</p>
-              <div className="flex gap-3">
+              <div className="flex gap-3 ">
                 {sizes.map((s) => (
                   <button
                     key={s.label}
