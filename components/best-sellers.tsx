@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Button } from "@/components/ui/button"; // Replace with your own <button> if needed
-import { bestSellers,extras } from "@/app/data/data";
+import { bestSellers, extras } from "@/app/data/data";
 import { useCart } from "@/app/context/CartContext";
 
 type PizzaSize = "Small" | "Medium" | "Large";
@@ -26,8 +26,6 @@ const sizes: SizeOption[] = [
   { label: "Medium", multiplier: 1.5 },
   { label: "Large", multiplier: 2 },
 ];
-
-
 
 export default function BestSellers() {
   const [selected, setSelected] = useState<BestSellerItem | null>(null);
@@ -57,13 +55,21 @@ export default function BestSellers() {
 
   return (
     <div className="p-6 relative mx-auto flex max-w-6xl flex-col px-6 lg:block ">
-      <h2 className="text-4xl text-center md:text-start md:text-3xl font-bold mb-4">Best Sellers</h2>
+      <h2 className="text-4xl text-center md:text-start md:text-3xl font-bold mb-4">
+        Best Sellers
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {bestSellers.map((item) => (
           <div
             key={item.id}
-            className="rounded-2xl shadow-md p-4 flex flex-col items-center bg-white border-1 dark:border-white/10 dark:bg-card/50"
+            className="relative rounded-2xl shadow-md p-4 flex flex-col items-center bg-white border-1 dark:border-white/10 dark:bg-card/50"
           >
+            {/* PRICE IN TOP RIGHT */}
+            <div className="absolute top-3 right-3 z-10">
+              <span className="bg-primary text-white px-2 py-1 rounded-full font-bold shadow">
+                ${item.basePrice.toFixed(2)}
+              </span>
+            </div>
             <img
               src={item.image}
               alt={item.title}
@@ -73,14 +79,18 @@ export default function BestSellers() {
             <p className="text-sm text-gray-500 mb-2 text-center">
               {item.description}
             </p>
-            <p className="text-lg font-bold mb-3">${item.basePrice.toFixed(2)}</p>
+            {/* <p className="text-lg font-bold mb-3">${item.basePrice.toFixed(2)}</p> */}
             <Button onClick={() => handleAddToCart(item)}>Order</Button>
           </div>
         ))}
       </div>
 
       {/* Modal */}
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
+      <Dialog
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        className="relative z-50"
+      >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <div className="fixed inset-0 flex items-center justify-center p-4 ">
           <Dialog.Panel className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl dark:bg-card">
@@ -133,7 +143,7 @@ export default function BestSellers() {
               <p className="text-lg font-semibold">
                 Total: ${getTotalPrice().toFixed(2)}
               </p>
-              <Button  onClick={() => setIsOpen(false)}>Confirm</Button>
+              <Button onClick={() => setIsOpen(false)}>Confirm</Button>
             </div>
           </Dialog.Panel>
         </div>
