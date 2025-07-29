@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { HeroHeader } from "./header";
+
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { CircleArrowRight } from "lucide-react";
@@ -11,10 +11,9 @@ import SliderItems from "./SliderItems";
 export default function HeroSection() {
   return (
     <>
-      <HeroHeader />
       <main className="overflow-x-hidden">
         <section>
-          <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44 mt-5">
+          <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-25 mt-5">
             <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
               <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
                 <h1 className="mt-8 max-w-2xl text-ballance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">
@@ -67,6 +66,9 @@ export default function HeroSection() {
               </div>
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
                 <InfiniteSlider speedOnHover={10} speed={30} gap={120}>
+                  <SliderItems image='/row-img2.png' />
+                  <SliderItems image='/row-img3.png' />
+                  <SliderItems image='/row-img4.png' />
                   <SliderItems image='/row-img2.png' />
                   <SliderItems image='/row-img3.png' />
                   <SliderItems image='/row-img4.png' />

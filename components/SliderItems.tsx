@@ -5,12 +5,12 @@ function SliderItems({image}: {image: string}) {
   return (
     <div className="flex object-contain">
 <Image
-  className="mx-auto object-contain h-20 w-20"
+  className="mx-auto object-contain h-25 w-25"
   src={image}
   alt="row img"
-  height={200} // or actual height
-  width={300}  // or actual width
-  loading="lazy"
+  height={800} // or actual height
+  width={800}  // or actual width
+  loading="eager"
 />
     </div>
   );
