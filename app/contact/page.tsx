@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -10,7 +9,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-background flex items-center justify-center px-4 py-16">
+    <main className="min-h-screen bg-background flex items-center justify-center px-4 py-25">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12">
         {/* --- LEFT: Contact Form --- */}
         <Card className="bg-card/50 border-border rounded-2xl shadow-2xl">
@@ -57,8 +56,8 @@ export default function ContactPage() {
           </CardContent>
         </Card>
 
-        {/* --- RIGHT: Store Info --- */}
-        <div className="space-y-6">
+        {/* --- RIGHT: Store Info + Google Map --- */}
+        <div className="space-y-6 flex flex-col">
           <h2 className="text-2xl font-bold text-foreground">
             Visit the Pizzeria
           </h2>
@@ -70,13 +69,11 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-foreground">Address</p>
                   <p className="text-sm text-muted-foreground">
-                    42 Napoli Lane, Brooklyn, NY 11201
+                    963 damascus 
                   </p>
                 </div>
               </div>
-
               <Separator />
-
               <div className="flex items-start gap-4">
                 <Clock className="text-orange-500 mt-1" />
                 <div>
@@ -90,9 +87,7 @@ export default function ContactPage() {
                   </p>
                 </div>
               </div>
-
               <Separator />
-
               <div className="flex items-start gap-4">
                 <Phone className="text-orange-500 mt-1" />
                 <div>
@@ -105,9 +100,7 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
-
               <Separator />
-
               <div className="flex items-start gap-4">
                 <Mail className="text-orange-500 mt-1" />
                 <div>
@@ -123,12 +116,31 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
+          {/* --- Google Map Embed --- */}
+          <div className="overflow-hidden rounded-2xl shadow-2xl border border-orange-100 bg-slate-100 dark:bg-card/50">
+            <iframe
+              title="Pizzeria Location"
+              width="100%"
+              height="240"
+              className="border-0 w-full h-60 min-h-[200px]"
+              style={{
+                minHeight: 200,
+                borderRadius: "1rem",
+                filter: "grayscale(10%) contrast(105%) brightness(95%)",
+              }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Damascus,+Syria&output=embed"
+            ></iframe>
+          </div>
+
           <Button
             variant="outline"
-            className="w-full border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black rounded-xl"
+            className="w-full border-orange-500 text-orange-500  hover:bg-background rounded-xl"
             onClick={() =>
               window.open(
-                "https://maps.google.com/?q=42+Napoli+Lane+Brooklyn+NY",
+                "https://maps.google.com/?q=Damascus,+Syria",
                 "_blank"
               )
             }

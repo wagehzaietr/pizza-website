@@ -33,7 +33,7 @@ export default function AboutPage() {
             Our Story
           </h2>
           <p className="mb-4 text-slate-700 dark:text-slate-300">
-            Pizzeria started in a tiny kitchen in Naples with one stone oven and
+            Pizzeria started in a tiny kitchen in Dasmascus with one stone oven and
             a dream: to serve honest, fire-kissed pizza that tastes like home.
           </p>
           <p className="text-slate-700 dark:text-slate-300">
@@ -113,6 +113,7 @@ export default function AboutPage() {
             Explore the Menu
           </Button>
         </Link>
+        
       </footer>
     </section>
   );

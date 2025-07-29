@@ -39,7 +39,7 @@ export default function HeroSection() {
                     variant="ghost"
                     className="px-5 text-base"
                   >
-                    <Link href="#link">
+                    <Link href="/about">
                       <span className="text-nowrap flex justify-center items-center gap-2">
                         Learn more <CircleArrowRight className="size-5 mt-1" />
                       </span>

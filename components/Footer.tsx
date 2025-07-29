@@ -59,7 +59,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                <span>123 Pizza Lane, Napoli City</span>
+                <span>+963 Pizza Lane, Damascus City</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Phone className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
@@ -97,7 +97,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between items-center text-sm">
           <p className="mb-4 md:mb-0">
             &copy; {new Date().getFullYear()}{" "}
-            <span className="text-white">Pizzeria</span>. All rights reserved.
+            <span className="text-white"><span className="text-primary">P</span>izzeria</span>. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link href="/privacy" className="hover:text-orange-500 transition-colors duration-200">
