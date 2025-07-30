@@ -20,7 +20,7 @@ export default function HeroSection() {
                   Slice into Happiness
                 </h1>
                 <p className="mt-8 max-w-2xl text-pretty text-lg">
-                  Craving pizza? We've got you covered with fresh ingredients,
+                  Craving pizza? We&apos;ve got you covered with fresh ingredients,
                   endless flavors, and the fastest delivery. Your perfect slice
                   is just a tap away!
                 </p>

@@ -1,4 +1,4 @@
-type PizzaSize = "Small" | "Medium" | "Large";
+
 
 interface BestSellerItem {
   id: number;
@@ -8,10 +8,7 @@ interface BestSellerItem {
   image: string;
 }
 
-interface SizeOption {
-  label: PizzaSize;
-  multiplier: number;
-}
+
 
 type Pizza = {
   id: string;
@@ -55,11 +52,7 @@ export const bestSellers: BestSellerItem[] = [
   },
 ];
 
-const sizes: SizeOption[] = [
-  { label: "Small", multiplier: 1 },
-  { label: "Medium", multiplier: 1.5 },
-  { label: "Large", multiplier: 2 },
-];
+
 
 export const extras: string[] = [
   "Extra Cheese",

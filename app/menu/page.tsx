@@ -14,7 +14,7 @@ import { pizzas } from '../data/data';
 export default function MenuPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilter, setActiveFilter] = useState<string>('all');
-  const { addItem, getItemCount } = useCart();
+  const { addItem } = useCart();
   
   const handleAddToCart = (pizza: PizzaItem) => {
     addItem(pizza);

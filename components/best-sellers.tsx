@@ -5,6 +5,7 @@ import { Dialog } from "@headlessui/react";
 import { Button } from "@/components/ui/button"; // Replace with your own <button> if needed
 import { bestSellers, extras } from "@/app/data/data";
 import { useCart } from "@/app/context/CartContext";
+import Image from "next/image";
 
 type PizzaSize = "Small" | "Medium" | "Large";
 
@@ -32,7 +33,6 @@ export default function BestSellers() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [size, setSize] = useState<PizzaSize>("Medium");
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
-  const { addItem, getItemCount } = useCart();
 
   const handleAddToCart = (item: BestSellerItem) => {
     setSelected(item);
@@ -70,7 +70,10 @@ export default function BestSellers() {
                 ${item.basePrice.toFixed(2)}
               </span>
             </div>
-            <img
+            <Image
+              width={800}
+              height={800}
+              loading="lazy"
               src={item.image}
               alt={item.title}
               className="h-40 w-full object-cover rounded-xl mb-2"

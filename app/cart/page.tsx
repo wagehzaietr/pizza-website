@@ -3,9 +3,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import toast, { Toast } from "react-hot-toast";   // <-- NEW
+import toast from "react-hot-toast";   // <-- NEW
 import { useCart } from "@/app/context/CartContext";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, clearCart, getCartTotal } = useCart();
@@ -39,7 +40,7 @@ export default function CartPage() {
           >
             <div className="flex items-start space-x-4">
               <div className="w-16 h-16 rounded-md overflow-hidden bg-muted flex-shrink-0">
-                <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                <Image loading="lazy" height={800} width={800} src={item.image} alt={item.name} className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-medium">{item.name}</h3>

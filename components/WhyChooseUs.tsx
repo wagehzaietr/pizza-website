@@ -46,8 +46,8 @@ export default function WhyChooseUs() {
             Why <span className="text-primary bg-orange-100 dark:bg-orange-950/30 px-2 py-1 rounded-md">Choose Us</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            We're passionate about crafting the perfect pizza experience for our customers.
-            Here's what sets us apart.
+            We&apos;re passionate about crafting the perfect pizza experience for our customers.
+            Here&apos;s what sets us apart.
           </p>
         </div>
 
