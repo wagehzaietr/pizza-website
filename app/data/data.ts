@@ -27,28 +27,28 @@ export const bestSellers: BestSellerItem[] = [
     title: "Pepperoni Pizza",
     description: "Classic pepperoni with mozzarella and tomato sauce.",
     basePrice: 10,
-    image: "/hero-img2.jpeg",
+    image: "/images/hero-img2.jpeg",
   },
   {
     id: 2,
     title: "Margherita Pizza",
     description: "Fresh basil, mozzarella, and rich tomato sauce.",
     basePrice: 9,
-    image: "/row-img4.png",
+    image: "/images/row-img4.png",
   },
   {
     id: 3,
     title: "BBQ Chicken Pizza",
     description: "Grilled chicken, BBQ sauce, onions, and mozzarella.",
     basePrice: 11,
-    image: "/row-img3.png",
+    image: "/images/row-img3.png",
   },
   {
     id: 4,
     title: "Veggie Delight",
     description: "Mushrooms, bell peppers, onions, olives, and more.",
     basePrice: 8,
-    image: "/row-img2.png",
+    image: "/images/row-img2.png",
   },
 ];
 
@@ -75,7 +75,7 @@ export const extras: string[] = [
       price: 10.99,
       category: 'classic',
       rating: 4.8,
-      image: '/row-img2.png'
+      image: '/images/row-img2.png'
     },
     {
       id: '2',
@@ -84,7 +84,7 @@ export const extras: string[] = [
       price: 12.99,
       category: 'classic',
       rating: 4.7,
-      image: '/row-img4.png'
+      image: '/images/row-img4.png'
     },
     {
       id: '3',
@@ -93,7 +93,7 @@ export const extras: string[] = [
       price: 15.99,
       category: 'premium',
       rating: 4.9,
-      image: '/hero-img.png'
+      image: '/images/hero-img.png'
     },
     {
       id: '4',
@@ -102,6 +102,6 @@ export const extras: string[] = [
       price: 13.99,
       category: 'vegetarian',
       rating: 4.6,
-      image: '/row-img3.png'
+      image: '/images/row-img3.png'
     },
   ];

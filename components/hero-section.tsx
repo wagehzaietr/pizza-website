@@ -48,7 +48,7 @@ export default function HeroSection() {
               </div>
               <Image
                 className="-z-10 rounded-4xl object-contain order-first ml-auto h-96 w-full sm:h-96 lg:absolute lg:inset-0 lg:-right-20 lg:-top-25 lg:order-last lg:h-[540px] lg:w-2/3 lg:object-contain dark:mix-blend-lighten dark:invert-0"
-                src="/hero-img.png"
+                src="/images/hero-img.png"
                 alt="Abstract Object"
                 height="4000"
                 width="3000"
@@ -66,12 +66,10 @@ export default function HeroSection() {
               </div>
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
                 <InfiniteSlider speedOnHover={10} speed={30} gap={120}>
-                  <SliderItems image='/row-img2.png' />
-                  <SliderItems image='/row-img3.png' />
-                  <SliderItems image='/row-img4.png' />
-                  <SliderItems image='/row-img2.png' />
-                  <SliderItems image='/row-img3.png' />
-                  <SliderItems image='/row-img4.png' />
+                  <SliderItems image='/images/row-img2.png' />
+                  <SliderItems image='/images/row-img3.png' />
+                  <SliderItems image='/images/row-img4.png' />
+  
                 </InfiniteSlider>
 
                 <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>

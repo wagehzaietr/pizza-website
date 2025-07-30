@@ -47,7 +47,7 @@ export default function AboutPage() {
             width={800}
             height={800}
             loading="lazy"
-            src="/about-img.webp"
+            src="/images/about-img.webp"
             alt="Brick oven pizza"
             className="w-full h-full object-contain"
           />

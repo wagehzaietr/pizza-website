@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Button } from "@/components/ui/button"; // Replace with your own <button> if needed
 import { bestSellers, extras } from "@/app/data/data";
-import { useCart } from "@/app/context/CartContext";
 import Image from "next/image";
 
 type PizzaSize = "Small" | "Medium" | "Large";
