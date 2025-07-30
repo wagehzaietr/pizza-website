@@ -8,9 +8,10 @@ function SliderItems({image}: {image: string}) {
   className="mx-auto object-contain h-25 w-25"
   src={image}
   alt="row img"
-  height={800} // or actual height
-  width={800}  // or actual width
-  loading="eager"
+  height={400} // or actual height
+  width={400}  // or actual width
+  loading="lazy"
+  quality={45}
 />
     </div>
   );

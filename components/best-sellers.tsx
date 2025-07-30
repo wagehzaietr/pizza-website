@@ -71,7 +71,8 @@ export default function BestSellers() {
             </div>
             <Image
               width={800}
-              height={800}
+              height={600}
+              quality={50}
               loading="lazy"
               src={item.image}
               alt={item.title}
