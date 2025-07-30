@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+markdownDownloadCopy code Wrap<!-- GitHub README.md – Pizzeria App -->
+<!-- language: markdown -->
 
-## Getting Started
+# 🍕 Pizzeria – Modern Ordering Experience
 
-First, run the development server:
+A lightning-fast, fully-static Next.js storefront for a neighbourhood pizzeria.  
+Built with TypeScript, styled with Tailwind & Shadcn/ui, and optimized for Core Web Vitals.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Highlights
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- ⚡ **Next.js 15 (App Router)** – zero-config edge deployment on Vercel  
+- 📱 **Responsive first** – mobile-friendly layout & dark-mode support  
+- 🎯 **Shadcn/ui** – accessible, theme-ready components  
+- 🛒 **Cart state** – localStorage-backed, SSR-safe context  
+- 🌐 **Static Generation** – 11 pre-rendered pages, < 200 kB first load  
+- 🧪 **Type-safe** – strict TypeScript & ESLint rules enabled  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📸 Screenshot
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Pizzeria demo]('')
 
-## Learn More
+## 🚀 Quick Start
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone & install**
+   ```bash
+   git clone https://github.com/<your-username>/pizzeria.git
+   cd pizzeria
+   pnpm install       # or npm / yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. 
+Run dev server
+bashDownloadCopy code Wrappnpm dev
+Open http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. 
+Build for production
+bashDownloadCopy code Wrappnpm build         # .next folder ready to deploy
+pnpm start         # local prod preview
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🧱 Tech Stack
+LayerTechFrameworkNext.js 15 (App Router)LanguageTypeScript 5.x (strict)StylingTailwind CSS + Shadcn/ui componentsStateReact Context + use-local-storage-stateLintingESLint + Prettier + next lintDeploymentVercel (zero-config)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⚙️ Environment Variables
+Create .env.local (none required for basic usage, but keep it here for future extensibility):
+bashDownloadCopy code Wrap# Optional: analytics, CMS, etc.
+NEXT_PUBLIC_GA_ID=
+🧪 Scripts
+CommandDescriptionpnpm devStart dev serverpnpm buildProduction buildpnpm startProd server (after build)pnpm lintESLint + Prettier checkpnpm analyzeBundle analyzer (@next/bundle)
+📦 Deployment
+
+Or push to GitHub — Vercel auto-detects and deploys.
+🤝 Contributing
+
+1. Fork & branch (git checkout -b feature/amazing-pizza)
+2. Commit (git commit -m 'feat: add gluten-free filter')
+3. PR with screenshot if UI changed
+
+We use Conventional Commits.
+📄 License
+MIT © Your Name.
+Feel free to fork, sell pizzas, or both.
